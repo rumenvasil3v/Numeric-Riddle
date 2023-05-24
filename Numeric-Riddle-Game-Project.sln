@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeric-Riddle-Game-Project", "Numeric-Riddle-Game-Project.csproj", "{ACB69EBB-577A-478C-8158-45B54A922EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeric-Riddle-demo", "..\Numeric-Riddle-demo\Numeric-Riddle-demo.csproj", "{ADB99EA3-7F6D-4D38-93A5-5AE4E700C11A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB69EBB-577A-478C-8158-45B54A922EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB69EBB-577A-478C-8158-45B54A922EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB69EBB-577A-478C-8158-45B54A922EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB69EBB-577A-478C-8158-45B54A922EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB99EA3-7F6D-4D38-93A5-5AE4E700C11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB99EA3-7F6D-4D38-93A5-5AE4E700C11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB99EA3-7F6D-4D38-93A5-5AE4E700C11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB99EA3-7F6D-4D38-93A5-5AE4E700C11A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCCE4DA5-EDA6-49C7-8CB1-8AA1C592D5DF}
+	EndGlobalSection
+EndGlobal
