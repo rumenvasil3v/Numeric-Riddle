@@ -16,3 +16,9 @@ Choose number between **1** and **100**, then press **Enter**.
 After that the computer will choose random number and you have 10 tries to guess it. If you guess the program gives you chance to continue your journey through the game, **otherwise** the program ends. If you continue ***the difficulty will increase*** and you need to guess number from **1** - **200** and your tries will increase with +5. And until you quit the program will continue increasing difficulties with +100 and your tries will increase +5.
 
 The computer will return you information wheter the number is ***higher or lower***
+
+# Solution
+I used simple conditional statements to check if the number is higher or lower and until the player guess it I used simple loop. The Conole game is written on ***C#*** programming language. Also is writtent on .NET 3.1 Framework with additional libraries ***System.Xml.Serialization.***
+
+# Source code
+[Source code](Numeric-Riddle.cs)
