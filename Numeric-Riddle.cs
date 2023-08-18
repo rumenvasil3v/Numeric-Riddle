@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace Numeric_Riddle_Game_Project
 {
@@ -6,8 +7,10 @@ namespace Numeric_Riddle_Game_Project
     {
         static void Main(string[] args)
         {
+            int tries = 0;
+            int n = 101;
             Random number = new Random();
-            int computerChoice = number.Next(1, 101);
+            int computerChoice = number.Next(1, n);
 
             Console.WriteLine("The computer has chose a number!");
             Console.WriteLine();
@@ -15,68 +18,117 @@ namespace Numeric_Riddle_Game_Project
             Console.WriteLine("And you need to guess it!");
             Console.WriteLine();
 
+            Console.WriteLine("You have only 5 tries to guess it and if you don't, don't worry!");
+            Console.WriteLine();
+
+            Console.WriteLine("Come again next time and I am sure it will be your lucky day!");
+            Console.WriteLine();
+
             Console.WriteLine("I give you this only possibility to beat the great mind!");
             Console.WriteLine();
 
-            Console.WriteLine("But before we start, I ask you! Do you want to play greates game ever?");
+            Console.WriteLine("But before we start, I ask you! Do you want to play the greatest game ever?");
             Console.Write("Choose between [YES/NO]: ");
             string playerAnswer = Console.ReadLine();
 
-            if (playerAnswer == "NO")
+            if (playerAnswer == "NO" || playerAnswer == string.Empty)
             {
+                Console.WriteLine("At least I tried! Thank you for your precious time and have a good day!");
                 return;
             }
 
             Console.Write("Okay, great! Now go ahead and try to beat the great mind! But before we start choose your username: ");
             string username = Console.ReadLine();
 
+            while (username == string.Empty)
+            {
+                Console.WriteLine("Invalid username!");
+                Console.WriteLine("Try again!");
+                Console.Write("Choose username: ");
+                username = Console.ReadLine();
+            }
+
             Console.WriteLine();
             Console.WriteLine($"Okay {username}! Let's go");
 
-            string playerOption;             
+            Console.Write($"Write your suggestions (1 - {n - 1}): ");
+            string playerSuggestions = Console.ReadLine();
+            bool isValid = int.TryParse(playerSuggestions, out int playerChoice);
 
-            while ((playerOption = Console.ReadLine()) != "NO")
+            while (playerChoice != computerChoice)
             {
-                Console.Write("Write your suggestion (1 - 100): ");
-                string playerSuggestions = Console.ReadLine();
-                bool isValid = int.TryParse(playerSuggestions, out int playerChoice);
-
-                while (playerChoice != computerChoice)
+                if (isValid)
                 {
-                    if (isValid)
+                    if (playerChoice > computerChoice)
                     {
-                        if (playerChoice > computerChoice)
-                        {
-                            Console.WriteLine();
-                            Console.WriteLine("Mhm...Try again! You went too high!");
-                        }
-                        else if (playerChoice < computerChoice)
-                        {
-                            Console.WriteLine();
-                            Console.WriteLine("Mhm...Try again! You went too low!");
-                        }
+                        tries++;
+                        Console.WriteLine("Mhm...Try again! You went too high!");
                     }
-                    else
+                    else if (playerChoice < computerChoice)
                     {
-                        Console.WriteLine("Invalid input!");
-                    }
+                        tries++;
+                        Console.WriteLine("Mhm...Try again! You went too low!");
+                    }  
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input!");
+                }
 
-                    Console.WriteLine();
-                    Console.Write("Write your suggestions (1 - 100): ");
-
-                    playerSuggestions = Console.ReadLine();
-                    isValid = int.TryParse(playerSuggestions, out playerChoice);
+                if (tries == 5)
+                {
+                    Console.WriteLine("Your 5 tries burned!");
+                    Console.WriteLine("Sorry, fellow! Come again next time and see ya!");
+                    return;
                 }
 
                 Console.WriteLine();
+                Console.Write($"Write your suggestions (1 - {n - 1}): ");
+
+                playerSuggestions = Console.ReadLine();
+                isValid = int.TryParse(playerSuggestions, out playerChoice);
+
                 if (playerChoice == computerChoice)
                 {
+                    tries = 0;
                     Console.WriteLine(@"I knew it you are a great mind, mister!
 Congrats!");
                     Console.WriteLine("Now, I ask you! Do you want to face our great mind again, mister!");
                     Console.Write("Choose one of these options [YES/NO]: ");
+                    string playerOption = Console.ReadLine();
+
+                    if (playerOption == "YES")
+                    {
+                        n += 100;
+
+                        Console.WriteLine();
+
+                        Console.WriteLine("Ookay then, Go ahead, but this time we increase the difficulty!");
+
+                        Console.WriteLine();
+
+                        Console.WriteLine($"The computer will choose random number between 1 - {n - 1}!");
+
+                        Console.WriteLine("Soo, it is your risk, but I am sure you will succeed!");
+
+                        Console.WriteLine("Go ahead and show the great mind who is greater!");
+
+                        computerChoice = number.Next(1, n);
+
+                        Console.WriteLine();
+                        Console.Write($"Write your suggestions (1 - {n - 1}): ");
+
+                        playerSuggestions = Console.ReadLine();
+                        isValid = int.TryParse(playerSuggestions, out playerChoice);
+                        continue;
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
-            }          
+            }
         }
     }
 }
+
