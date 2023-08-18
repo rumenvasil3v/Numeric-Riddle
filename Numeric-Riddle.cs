@@ -18,51 +18,65 @@ namespace Numeric_Riddle_Game_Project
             Console.WriteLine("I give you this only possibility to beat the great mind!");
             Console.WriteLine();
 
-            Console.Write("But before we start, choose your username: ");
+            Console.WriteLine("But before we start, I ask you! Do you want to play greates game ever?");
+            Console.Write("Choose between [YES/NO]: ");
+            string playerAnswer = Console.ReadLine();
+
+            if (playerAnswer == "NO")
+            {
+                return;
+            }
+
+            Console.Write("Okay, great! Now go ahead and try to beat the great mind! But before we start choose your username: ");
             string username = Console.ReadLine();
 
             Console.WriteLine();
             Console.WriteLine($"Okay {username}! Let's go");
 
-            Console.Write("Write your suggestion (1 - 100): ");
+            string playerOption;             
 
-
-            string playerSuggestions = Console.ReadLine();
-            bool isValid = int.TryParse(playerSuggestions, out int playerChoice);
-
-            while (playerChoice != computerChoice)
+            while ((playerOption = Console.ReadLine()) != "NO")
             {
-                if (isValid)
+                Console.Write("Write your suggestion (1 - 100): ");
+                string playerSuggestions = Console.ReadLine();
+                bool isValid = int.TryParse(playerSuggestions, out int playerChoice);
+
+                while (playerChoice != computerChoice)
                 {
-                    if (playerChoice > computerChoice)
+                    if (isValid)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Mhm...Try again! You went too high!");
+                        if (playerChoice > computerChoice)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Mhm...Try again! You went too high!");
+                        }
+                        else if (playerChoice < computerChoice)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Mhm...Try again! You went too low!");
+                        }
                     }
-                    else if (playerChoice < computerChoice)
+                    else
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Mhm...Try again! You went too low!");
+                        Console.WriteLine("Invalid input!");
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input!");
+
+                    Console.WriteLine();
+                    Console.Write("Write your suggestions (1 - 100): ");
+
+                    playerSuggestions = Console.ReadLine();
+                    isValid = int.TryParse(playerSuggestions, out playerChoice);
                 }
 
                 Console.WriteLine();
-                Console.Write("Write your suggestions (1 - 100): ");
-
-                playerSuggestions = Console.ReadLine();
-                isValid = int.TryParse(playerSuggestions, out playerChoice);
-            }
-
-            Console.WriteLine();
-            if (playerChoice == computerChoice)
-            {
-                Console.WriteLine(@"I knew it you are a great mind, mister!
+                if (playerChoice == computerChoice)
+                {
+                    Console.WriteLine(@"I knew it you are a great mind, mister!
 Congrats!");
-            }
+                    Console.WriteLine("Now, I ask you! Do you want to face our great mind again, mister!");
+                    Console.Write("Choose one of these options [YES/NO]: ");
+                }
+            }          
         }
     }
 }
