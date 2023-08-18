@@ -22,3 +22,13 @@ I used simple conditional statements to check if the number is higher or lower a
 
 # Source code
 [Source code](Numeric-Riddle.cs)
+
+# Screenshots
+<img alt = "Screenshots of numeric-riddle game" src = "https://github.com/rumenvasil3v/Numeric-Riddle/assets/133911957/e70ec307-134d-40f3-9034-3232674eeda2" width = "700px">
+
+<img src = "https://github.com/rumenvasil3v/Numeric-Riddle/assets/133911957/da0fb1fe-5d1c-423b-94ab-5ff59db88795" alt = "Screenshots of numeric-riddle game" width = "700px">
+
+<img src = "https://github.com/rumenvasil3v/Numeric-Riddle/assets/133911957/57d702d8-ca79-4fe1-b29b-f0a55a83a8d1" alt = "Screenshots of numeric-riddle game" width = "700px">
+
+
+<img src = "https://github.com/rumenvasil3v/Numeric-Riddle/assets/133911957/ff6b1e27-a0b1-41bb-935e-8ffbcbe1cdb9" alt = "Screenshots of numeric-riddle game" width = "700px">
