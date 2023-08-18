@@ -7,6 +7,10 @@ namespace Numeric_Riddle_Game_Project
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            //Console.BackgroundColor = ConsoleColor.Red;
+
+            int countOfTries = 10;
             int tries = 0;
             int n = 101;
             Random number = new Random();
@@ -18,7 +22,7 @@ namespace Numeric_Riddle_Game_Project
             Console.WriteLine("And you need to guess it!");
             Console.WriteLine();
 
-            Console.WriteLine("You have only 5 tries to guess it and if you don't, don't worry!");
+            Console.WriteLine("You have only 10 tries to guess it and if you don't, don't worry!");
             Console.WriteLine();
 
             Console.WriteLine("Come again next time and I am sure it will be your lucky day!");
@@ -30,6 +34,9 @@ namespace Numeric_Riddle_Game_Project
             Console.WriteLine("But before we start, I ask you! Do you want to play the greatest game ever?");
             Console.Write("Choose between [YES/NO]: ");
             string playerAnswer = Console.ReadLine();
+
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Cyan;
 
             if (playerAnswer == "NO" || playerAnswer == string.Empty)
             {
@@ -75,9 +82,9 @@ namespace Numeric_Riddle_Game_Project
                     Console.WriteLine("Invalid input!");
                 }
 
-                if (tries == 5)
+                if (tries == countOfTries)
                 {
-                    Console.WriteLine("Your 5 tries burned!");
+                    Console.WriteLine($"Your {countOfTries} tries burned!");
                     Console.WriteLine("Sorry, fellow! Come again next time and see ya!");
                     return;
                 }
@@ -90,7 +97,9 @@ namespace Numeric_Riddle_Game_Project
 
                 if (playerChoice == computerChoice)
                 {
-                    tries = 0;
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Blue;
+
                     Console.WriteLine(@"I knew it you are a great mind, mister!
 Congrats!");
                     Console.WriteLine("Now, I ask you! Do you want to face our great mind again, mister!");
@@ -99,11 +108,18 @@ Congrats!");
 
                     if (playerOption == "YES")
                     {
+                        countOfTries += 5;
+                        tries = 0;
+
+                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+
                         n += 100;
 
                         Console.WriteLine();
 
                         Console.WriteLine("Ookay then, Go ahead, but this time we increase the difficulty!");
+                        Console.WriteLine("But also your tries are increasing +5!");
 
                         Console.WriteLine();
 
