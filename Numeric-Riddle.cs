@@ -24,7 +24,6 @@ namespace Numeric_Riddle_Game_Project
             Console.WriteLine();
             Console.WriteLine($"Okay {username}! Let's go");
 
-            Console.WriteLine($"Choose what difficulty you want to play: ");
             Console.Write("Write your suggestion (1 - 100): ");
 
 
