@@ -30,5 +30,8 @@ I used simple conditional statements to check if the number is higher or lower a
 
 <img src = "https://github.com/rumenvasil3v/Numeric-Riddle/assets/133911957/57d702d8-ca79-4fe1-b29b-f0a55a83a8d1" alt = "Screenshots of numeric-riddle game" width = "700px">
 
-
 <img src = "https://github.com/rumenvasil3v/Numeric-Riddle/assets/133911957/ff6b1e27-a0b1-41bb-935e-8ffbcbe1cdb9" alt = "Screenshots of numeric-riddle game" width = "700px">
+
+# Live Demo
+You can play the game directly in your browser from here:
+[Link To Game](https://replit.com/@rumenvasil3v/Numeric-Riddle#Main.cs)
